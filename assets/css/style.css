@@ -1,0 +1,41 @@
+html *
+{
+    font-size: 36px !important;
+    font-family: Arial !important;
+}
+
+.title
+{
+    color: white;
+    background-color: blue;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.footer
+{
+    margin-top: 10px;
+}
+
+table {
+    border-collapse:collapse;
+    border: 2px solid;
+}
+
+table td {
+    padding: 5px;
+    border-width: 1px;
+    border-style: solid dotted;
+}
+
+table tr.focused {
+    background-color: #EEEEEE;
+}
+
+.keyboard {
+    margin-top: 5px;
+}
+
+input {
+    padding: 5px;
+}

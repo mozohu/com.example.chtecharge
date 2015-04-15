@@ -1,0 +1,10 @@
+{
+  "name": "com.example.chtbill",
+  "authors": [
+    "KSonglover <ksonglover@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+	"bower.json"
+  ]
+}

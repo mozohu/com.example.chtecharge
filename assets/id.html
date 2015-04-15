@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <script src="js/jquery-1.9.1.js"></script>
+        <script src="js/jquery.keyboard.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/style.css"> 
+    </head>
+    <body>
+        <div class="title">
+            Input ID / Phone No:
+        </div>
+        <div>
+            <input id="input" type="text"></input>
+        </div>
+        <div class="footer">
+            <button>Cancel</button>
+            <a href="bill.html"><button class="next">Next</button></a>
+        </div>
+        <script>
+	    window.exports.begin = function(){
+	    	window.show();
+	    };
+            $("#input").keyboard().change(function(){
+                var v=$(this).val();
+                if(/^$/.test(v)){
+                    $("div.keyboard div.letter").css("visibility","");
+                    $("button.next").css("visibility","hidden");
+                }else{
+                    $("div.keyboard div.letter").css("visibility","hidden");
+                    $("button.next").css("visibility","");
+                }
+            }).trigger("change");
+            $("button.next").click(function(){
+                var rx=/^\d/;
+                var input=$("#input").val();
+                if(rx.test(input)){
+                    sessionStorage.setItem('chtbill.phno',$("#input").val());
+                    sessionStorage.setItem('chtbill.id','A1234567890');
+                }else{
+                    sessionStorage.setItem('chtbill.phno','0919000111');
+                    sessionStorage.setItem('chtbill.id',$("#input").val());
+                }
+            });
+        </script>
+    </body>
+</html>
