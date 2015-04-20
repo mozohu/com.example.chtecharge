@@ -6,7 +6,7 @@
     </head>
     <body>
         <div class="title">
-            Are You Sure To Pay?
+            Are You Sure To Charge?
         </div>
         <div>
             <textarea rows="7" cols="50">
@@ -14,19 +14,24 @@
         </div>
         <div class="footer">
             <button>Cancel</button>
-            <a href="result.html"><button>Confirm</button></a>
+            <button class="confirm">Confirm</button>
+            <a href="result_success.html" class="success"></a>
+            <a href="result_failed.html" class="failed"></a>
         </div>
         <script>
-            var bil=JSON.parse(sessionStorage.getItem('chtbill.bill'));
-            var bid=sessionStorage.getItem('chtbill.bid');
-            var bacc=sessionStorage.getItem('chtbill.bacc');
+            var phno=sessionStorage.getItem('chtecharge.phno');
+            var pnt_cha=sessionStorage.getItem('chtecharge.pnt_cha');
             var msg="Dear Customer,\n";
-            msg+="You are about to pay the bill of "+bil[0]+"\n";
-            msg+="\tPhone No:"+bil[1]+"\n";
-            msg+="\tDate:"+bil[2]+"\n";
-            msg+="Via the bank account of ("+bid+") "+bacc+"\n";
-            msg+="The amount is "+bil[3]+"\n";
+            msg+="You are about to charge "+pnt_cha+" for phone no\n";
+            msg+="\t"+phno+"\n";
             $("textarea").text(msg);
+            $("button.confirm").click(function(){
+                if(confirm("call payment plugin success?")){
+                    $("a.success")[0].click();
+                }else{
+                    $("a.failed")[0].click();
+                }
+            });
         </script>
     </body>
 </html>

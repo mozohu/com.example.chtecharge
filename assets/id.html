@@ -6,14 +6,14 @@
     </head>
     <body>
         <div class="title">
-            Input ID / Phone No:
+            Input Phone No:
         </div>
         <div>
             <input id="input" type="text"></input>
         </div>
         <div class="footer">
             <button>Cancel</button>
-            <a href="bill.html"><button class="next">Next</button></a>
+            <a href="charge.html"><button class="next">Next</button></a>
         </div>
         <script>
 	    window.exports.begin = function(){
@@ -22,23 +22,15 @@
             $("#input").keyboard().change(function(){
                 var v=$(this).val();
                 if(/^$/.test(v)){
-                    $("div.keyboard div.letter").css("visibility","");
                     $("button.next").css("visibility","hidden");
                 }else{
-                    $("div.keyboard div.letter").css("visibility","hidden");
                     $("button.next").css("visibility","");
                 }
             }).trigger("change");
+            $("div.keyboard div.letter").css("visibility","hidden");
             $("button.next").click(function(){
-                var rx=/^\d/;
                 var input=$("#input").val();
-                if(rx.test(input)){
-                    sessionStorage.setItem('chtbill.phno',$("#input").val());
-                    sessionStorage.setItem('chtbill.id','A1234567890');
-                }else{
-                    sessionStorage.setItem('chtbill.phno','0919000111');
-                    sessionStorage.setItem('chtbill.id',$("#input").val());
-                }
+                sessionStorage.setItem('chtecharge.phno',$("#input").val());
             });
         </script>
     </body>

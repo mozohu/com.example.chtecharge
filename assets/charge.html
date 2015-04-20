@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <script src="js/jquery-1.9.1.js"></script>
+        <script src="js/jquery.keyboard.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/style.css"> 
+    </head>
+    <body>
+        <div class="title">
+            Charge Points:
+        </div>
+        <div>
+            <div>The Remained Points of Phone No <label id="phno"></label> is <label id="pnt_rem"></label></div>
+            <div>Select Points to Charging:</div>
+            <div>
+                <input type="radio" name="pnt_cha" value="100">100</input>
+                <input type="radio" name="pnt_cha" value="300">300</input>
+                <input type="radio" name="pnt_cha" value="500">500</input>
+            </div>
+        </div>
+        <div class="footer">
+            <button>Cancel</button>
+            <a href="id.html"><button>Prev</button></a>
+            <a href="confirm.html"><button class="next">Next</button></a>
+        </div>
+        <script>
+            $("label#phno").text(sessionStorage.getItem('chtecharge.phno'));
+            $("label#pnt_rem").text(38);
+            $('input[type="radio"]').change(function(){
+                $("button.next").css("visibility","");
+            });
+            $("button.next").click(function(){
+                    var pnt_cha=$('input[type="radio"][name="pnt_cha"]:checked').val();
+                    sessionStorage.setItem('chtecharge.pnt_cha',pnt_cha);
+            });
+            $("button.next").css("visibility","hidden");
+        </script>
+    </body>
+</html>
