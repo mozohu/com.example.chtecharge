@@ -1,8 +1,0 @@
-Package: ivm-plugin-chtecharge
-Version: 1.0.0.20150421
-Architecture: all
-Maintainer: Transtep Technology <mozo@transtep.com>
-Installed-Size: 327
-Section: admin
-Priority: extra
-Description: Transtep IVM plugin of chtecharge
