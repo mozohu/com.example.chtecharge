@@ -1,0 +1,11 @@
+Source: ivm-plugin-chtecharge
+Section: admin
+Priority: extra
+Maintainer: Transtep Technology <mozo@transtep.com>
+Standards-Version: 1.0
+Build-Depends: debhelper (>= 4.0), fakeroot
+
+Package: ivm-plugin-chtecharge
+Architecture: all
+Depends: 
+Description: Transtep IVM plugin of chtecharge

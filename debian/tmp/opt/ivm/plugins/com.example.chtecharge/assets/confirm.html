@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <script src="js/jquery-1.9.1.js"></script>
+        <script src="js/jquery.keyboard.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/style.css"> 
+    </head>
+    <body>
+        <div class="title">
+            Are You Sure To Pay?
+        </div>
+        <div>
+            <textarea rows="7" cols="50">
+            </textarea>
+        </div>
+        <div class="footer">
+            <button>Cancel</button>
+            <a href="result.html"><button>Confirm</button></a>
+        </div>
+        <script>
+            var bil=JSON.parse(sessionStorage.getItem('chtbill.bill'));
+            var bid=sessionStorage.getItem('chtbill.bid');
+            var bacc=sessionStorage.getItem('chtbill.bacc');
+            var msg="Dear Customer,\n";
+            msg+="You are about to pay the bill of "+bil[0]+"\n";
+            msg+="\tPhone No:"+bil[1]+"\n";
+            msg+="\tDate:"+bil[2]+"\n";
+            msg+="Via the bank account of ("+bid+") "+bacc+"\n";
+            msg+="The amount is "+bil[3]+"\n";
+            $("textarea").text(msg);
+        </script>
+    </body>
+</html>

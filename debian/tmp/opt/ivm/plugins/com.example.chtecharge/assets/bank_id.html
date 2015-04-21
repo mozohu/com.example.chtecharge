@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <script src="js/jquery-1.9.1.js"></script>
+        <script src="js/jquery.keyboard.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/style.css"> 
+    </head>
+    <body>
+        <div class="title">
+            Input Bank ID:
+        </div>
+        <div>
+            <input id="input" type="text"></input>
+        </div>
+        <div class="footer">
+            <button>Cancel</button>
+            <a href="bill.html"><button>Prev</button></a>
+            <a href="bank_acc.html"><button class="next">Next</button></a>
+        </div>
+        <script>
+            $("#input").keyboard().change(function(){
+                var v=$(this).val();
+                if(/^$/.test(v)){
+                    $("button.next").css("visibility","hidden");
+                }else{
+                    $("button.next").css("visibility","");
+                }
+            }).trigger("change");
+            $("div.keyboard div.letter").css("visibility","hidden");
+            $("button.next").click(function(){
+                    sessionStorage.setItem('chtbill.bid',$("#input").val());
+            });
+        </script>
+    </body>
+</html>
